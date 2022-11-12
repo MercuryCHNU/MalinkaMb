@@ -1,0 +1,97 @@
+{
+	"contentrating" : "Everyone",
+	"description" : "Have your personal army of Kemomimi-chans right on your desktop\nYou can specify the amount of rows/columns, background color, size, spacing, etc\n\nShould work without errors and I hope it does, pls tell me if something breaks. For what it is it's a bit performance-hungry but that's nothing I can fix",
+	"file" : "index.html",
+	"general" : 
+	{
+		"properties" : 
+		{
+			"alternateimg" : 
+			{
+				"index" : 6,
+				"order" : 106,
+				"text" : "Change Image (Even rows play backward)",
+				"type" : "bool",
+				"value" : true
+			},
+			"alternaterows" : 
+			{
+				"index" : 5,
+				"order" : 105,
+				"text" : "Alternate Rows",
+				"type" : "bool",
+				"value" : true
+			},
+			"columns" : 
+			{
+				"fraction" : false,
+				"index" : 2,
+				"max" : 200,
+				"min" : 1,
+				"order" : 102,
+				"text" : "Columns",
+				"type" : "slider",
+				"value" : 3
+			},
+			"rows" : 
+			{
+				"fraction" : false,
+				"index" : 1,
+				"max" : 50,
+				"min" : 1,
+				"order" : 101,
+				"text" : "Rows",
+				"type" : "slider",
+				"value" : 1
+			},
+			"schemecolor" : 
+			{
+				"order" : 0,
+				"text" : "ui_browse_properties_scheme_color",
+				"type" : "color",
+				"value" : "0.9764705882352941 0.9450980392156862 0.8588235294117647"
+			},
+			"spacinghorizontal" : 
+			{
+				"fraction" : false,
+				"index" : 3,
+				"max" : 1000,
+				"min" : -1000,
+				"order" : 103,
+				"text" : "Spacing Horizontal",
+				"type" : "slider",
+				"value" : -120
+			},
+			"spacingvertical" : 
+			{
+				"fraction" : false,
+				"index" : 4,
+				"max" : 1000,
+				"min" : -1000,
+				"order" : 104,
+				"text" : "Spacing Vertical",
+				"type" : "slider",
+				"value" : 0
+			},
+			"zoom" : 
+			{
+				"fraction" : true,
+				"index" : 0,
+				"max" : 50,
+				"min" : 1,
+				"order" : 100,
+				"precision" : 2,
+				"step" : 0.10000000000000001,
+				"text" : "Zoom",
+				"type" : "slider",
+				"value" : 5
+			}
+		}
+	},
+	"preview" : "preview.jpg",
+	"tags" : [ "Anime" ],
+	"title" : "Kemomimi-Chan",
+	"type" : "web",
+	"version" : 0,
+	"visibility" : "private"
+}

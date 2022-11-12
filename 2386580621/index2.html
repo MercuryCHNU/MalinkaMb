@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="js/kemono.js"></script>
+    <style>
+        body {
+            margin: 0;
+            overflow: auto;
+        }
+        img {
+            position: absolute;
+            image-rendering:pixelated;
+        }
+        #container {
+            display: inline-grid;
+            justify-content:center;
+            align-items:center;
+            padding-top: 10%;
+
+        }
+        #imgTable {
+	        display: table;
+        }
+        .tableRow {
+            display: flex;
+        }
+        .tableRowOdd {
+            display: flex;
+            align-items:center;
+            justify-content:center;
+        }
+        .tableCell {
+            display: table-cell;
+        }
+        .registration-cssave{
+            padding:50px 0;
+
+        }
+
+        .registration-cssave form {
+            max-width:800px;
+            padding:50px 70px;
+            border-radius:10px;
+            box-shadow:4px 4px 15px rgba(0, 0, 0, 0.2);
+            background-color:#fff;
+        }
+
+        .registration-cssave form h3 {
+            font-weight:bold;
+            margin-bottom:30px;
+        }
+
+        .registration-cssave .item {
+            border-radius:10px;
+            margin-bottom:25px;
+            padding:10px 20px;
+        }
+
+        .registration-cssave .create-account {
+            border-radius:30px;
+            padding:10px 20px;
+            font-size:18px;
+            font-weight:bold;
+            background-color:#3f93ff;
+            border:none;
+            color:white;
+            margin-top:20px;
+        }
+
+        @media (max-width: 576px) {
+            .registration-cssave form {
+                padding:50px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="registration-cssave">
+            <form>
+                <h3 class="text-center">Форма входу</h3>
+                <div class="form-group">
+                    <input class="form-control item" type="text" name="username" maxlength="15" minlength="4" pattern="^[a-zA-Z0-9_.-]*$" id="username" placeholder="Логін" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control item" type="password" name="Пароль" minlength="6" id="password" placeholder="Пароль" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control item" type="text" name="lname" id="email" placeholder="Прізвище" required>
+                </div>
+                <div class="form-group">
+                    <input class="form-control item" type="text" name="fname" id="email" placeholder="Ім'я" required>
+                </div>
+                <div class="form-group">
+                    <label for="years">Оберіть ваш вік:</label>
+                <select name="years">
+                    <option>До 16</option>
+                    <option>17-19</option>
+                    <option>20-23</option>
+                    <option>23 і більше</option>
+                </select>
+                </div>
+                <p>Ваша стать:</p>
+                <div class="form-group">
+                    <input type="radio" id="male" name="Стать" checked>
+                    <label for="male">Чоловіча</label><br>
+                    <input type="radio" id="female" name="Стать">
+                    <label for="female">Жіноча</label><br>
+                    <input type="radio" id="other" name="Стать">
+                    <label for="other">Неоднозначно</label>
+                </div>
+                <div class="form-group">
+                    <p style="width: 75%">На якій платформі вам комфортніше займатися?</p>
+                    <input type="checkbox" id="gm" name="Платформа">
+                    <label for="gm"> Google meet</label><br>
+                    <input type="checkbox" id="zo" name="Платформа">
+                    <label for="zo"> Zoom</label><br>
+                    <input type="checkbox" id="ot" name="Платформа">
+                    <label for="ot"> Інше</label>
+                </div>
+                <div class="form-group">
+                    <p></p>
+                    <textarea name="message" rows="5" cols="45" placeholder="Коментар для уточнення певних запитань"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block create-account" type="submit">Відправити форму</button>
+                    <p><button class="btn btn-primary btn-block create-account" type="reset">Очищення</button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
