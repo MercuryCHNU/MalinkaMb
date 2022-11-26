@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Malinka</title>
     <meta charset="utf-8">
@@ -8,223 +8,262 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Pacifico&display=swap"
+          rel="stylesheet">
+    <link rel="stylesheet" href="css/Malinka.css">
 
-    <style>
-
-        #collapsibleNavbar{
-            justify-content: right;
-
-        }
-        .carousel-inner img {
-            width: 100%;
-            height: auto;
-        }
-        .h1c{
-            color: darkorange;
-        }
-        body{
-            max-width: 85%;
-            margin: auto;
-            background: linear-gradient(210deg,deepskyblue,beige, blanchedalmond, lightblue);
-            margin-top: 20px;
-            margin-bottom: 20px;
-
-
-        }
-        video{
-            width: 100%;
-            border-radius: 10px;
-        }
-        .img1{
-            width: 100%;
-            border-radius: 10px;
-        }
-        .carousel-caption{
-            background: linear-gradient(250deg,deepskyblue,beige, blanchedalmond, lightblue);
-            opacity: 90%;
-            border-radius: 10px;
-        }
-        h5{
-            color: slategray;
-        }
-        img:hover{
-            opacity: 90%;
-            transition: all 3s;
-            transform: matrix(1.05,0,0,1.05,5,5);
-
-        }
-
-    </style>
 </head>
 <body>
 
-<div id="demo" class="carousel slide" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#demo" data-slide-to="0" class="active"></li>
-        <li data-target="#demo" data-slide-to="1"></li>
-        <li data-target="#demo" data-slide-to="2"></li>
-    </ul>
-    <div class="carousel-inner rounded-top">
-        <div class="carousel-item active">
-            <img src="images/20.png" alt="pz1">
-            <div class="carousel-caption text-muted">
-                <h3>Вітаємо вас у нашій онлайн-школі навчання <span class="h1c">Malinka</span></h3>
-                <p class="gradient">Для новачків та профі.
-                    Ілюстрація. Скетчінг. Живопис. Procreate. Каліграфія. Resin Art</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="images/21.png" alt="pz2">
-            <div class="carousel-caption text-muted">
-                <h3>Термін навчання триває від <span class="h1c">30 до 180 днів</span></h3>
-                <p>В нашій онлайн-школі існує подат 10 різноманітних курсів, від пейзажу до малювання аніме</p>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <img src="images/22.png" alt="pz3">
-            <div class="carousel-caption text-muted">
-                <h3>Можемо викладати <span class="h1c"> як онлайн, так і офлайн</span></h3>
-                <p> Навчання проходить по плану, в якому знаходяться десятки тем, залежачи від обраного курсу</p>
-            </div>
-        </div>
-    </div>
-    <a class="carousel-control-prev" href="#demo" data-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </a>
-    <a class="carousel-control-next" href="#demo" data-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </a>
+<div class="block-popup">
+    <h3>Встигніть замовити курс, поки діє знижка 30%</h3>
+    <form>
+        <input type="email" placeholder="email" name="email-popup">
+        <input type="button" name="btn-form-popup" value="Відправити">
+    </form>
+    <span>&times;</span>
 </div>
+<div class="overlay2"></div>
 
+<div class="btn-up btn-up_hide"></div>
 
-<nav class="navbar navbar-expand-sm navbar-light sticky-top rounded-bottom" style="background: linear-gradient(270deg,cornflowerblue, powderblue)">
-    <a class="navbar-brand" href="index.html">
-        <img src="images/logo_footer.png">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" data-toggle="popover" title data-placement="top" data-content="Чернівці, вул. Соловея 6">&#9751;Місцеположення</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" data-toggle="popover" title data-placement="top" data-content="+38 066 235 42 95">&#9743;Контакти</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-dark" href="#" data-toggle="popover" title data-placement="top" data-content="MalinkaSt@gmail.com">&#9993;Пошта</a>
-            </li>
-            <li class="nav-item">
-                <div class="dropdown ">
-                    <button class="btn dropdown-toggle text-dark" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        &#9994;Профіль
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" style="width: 250px">
-                        <form class="px-4 py-3">
-                            <div class="form-group">
-                                <input class="form-control item" type="email" name="email" id="email" placeholder="Email" required>
-                            </div>
-                            <div class="form-group">
-                                <input class="form-control item" type="password" name="Пароль" minlength="6" id="password" placeholder="Пароль" required>
-                            </div>
-                            <div class="form-check">
-                                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                                <label class="form-check-label" for="dropdownCheck">
-                                    Запам'ятати мене
-                                </label>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Ввійти</button>
-                        </form>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="2386580621/index2.html">Реєстрація</a>
-                        <a class="dropdown-item" href="2386580621/index2.html">Забули пароль?</a>
-                    </div>
-                </div>
-            </li>
+<header>
+    <div id="demo" class="carousel slide" data-ride="carousel">
+        <ul class="carousel-indicators">
+            <li data-target="#demo" data-slide-to="0" class="active"></li>
+            <li data-target="#demo" data-slide-to="1"></li>
+            <li data-target="#demo" data-slide-to="2"></li>
         </ul>
+        <div class="carousel-inner rounded-top">
+            <div class="carousel-item active">
+                <img src="images/20.png" alt="pz1">
+                <div class="carousel-caption text-muted">
+                    <h3>Вітаємо вас у нашій онлайн-школі навчання <span class="h1c">Malinka</span></h3>
+                    <p class="gradient">Для новачків та профі.
+                        Ілюстрація. Скетчінг. Живопис. Procreate. Каліграфія. Resin Art</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/21.png" alt="pz2">
+                <div class="carousel-caption text-muted">
+                    <h3>Термін навчання триває від <span class="h1c">30 до 180 днів</span></h3>
+                    <p>В нашій онлайн-школі існує подат 10 різноманітних курсів, від пейзажу до малювання аніме</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/22.png" alt="pz3">
+                <div class="carousel-caption text-muted">
+                    <h3>Можемо викладати <span class="h1c"> як онлайн, так і офлайн</span></h3>
+                    <p> Навчання проходить по плану, в якому знаходяться десятки тем, залежачи від обраного курсу</p>
+                </div>
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#demo" data-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#demo" data-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
     </div>
 
-</nav>
 
-<div class="container" style="margin-top:30px">
+    <nav class="navbar navbar-expand-sm navbar-light sticky-top rounded-bottom"
+         style="background: linear-gradient(270deg,cornflowerblue, powderblue)">
+        <a class="navbar-brand" href="index.html">
+            <img src="images/logo_footer.png" alt="Malinka">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">&#10112Головна<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About%20us.html">&#10113Про нас</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                       aria-expanded="false">
+                        Додаткові утиліти
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#">&#10114FAQ</a>
+                        <a class="dropdown-item" href="#">&#10115Форум</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item disabled" href="#">&#10116Бонусні матеріали</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</header>
+<main class="container" style="margin-top:30px">
     <div class="row">
         <div class="col-sm-8">
-            <h2>Про нас</h2>
-            <p>Malinka — універсальна онлайн-школа для тих, хто хоче та любить малювати. Вона підійде початківцям, які бажають освоїти нову навичку з нуля, аматорам, яким потрібно заповнити прогалини у знаннях, і традиційним художникам, які хочуть спробувати працювати в цифрі і не тільки. </p>
-            <figure><video controls autoplay muted loop height="400px">
-                <source src="images/woah.mp4" type="video/mp4" >
-                <source src="images/woah.ogg" type="video/ogg">
-                Your browser does not support the video tag.
-            </video></figure>
+            <!--Rozdilka-->
 
-            <h3>Чернівецька приватна школа «Malinka»</h3>
-            <p>Навчання у нашій школі не залежить від місцеперебування учня. Діти, що вчаться у нашій школі, проживають як в Україні, так і в країнах Європи, Америки, Азії, Африки.
-                Навчання здійснюється за державними програмами України з урахуванням індивідуальних особливостей учня на українській мові.
-                Школа видає документ державного зразка про отримання освіти.
-            </p>
-            <figure>
-                <img class="img1" src="images/about_img.png">
-            </figure>
+            <section>
+                <h3>Отримайте миттєву консультацію</h3>
+                <p>Мета Школи – не тільки дати знання учням, а й навчити мислити, бути самостійними й компетентними у
+                    пошуку знань, зробити наших учнів духовно й культурно-багатими, соціально-активними та креативними
+                    людьми.</p>
+            </section>
+            <div>
+                <div class="container-Grid2 mt-5">
+                    <div class="gridRol2">
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/Card%20(1).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Безис (0$)</h5>
+                                <p class="card-text">Вам дають доступ до одного безкоштовного уроку для аналізу своїх можливостей, а також практичне онлайн-заняття</p>
+                                <a href="2386580621/index2.html" class="btn btn-primary">Замовити</a>
 
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/Card%20(2).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Практикль (30$)</h5>
+                                <p class="card-text">Ви отримуєте доступ до базового курсу по малюванню в Paint.net, Krita, Photoshop та інші. Також, десятки відеоуроків та консультацію від викладачів</p>
+                                <a href="2386580621/index2.html" class="btn btn-primary">Замовити</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/Card%20(3).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Альбоміус (50$)</h5>
+                                <p class="card-text">Сюди входять всі попередні пакети + відеоматеріали з пейзажу, аніме, малювання палітрою та прогресивний рівень володіння фоторедакторами</p>
+                                <a href="2386580621/index2.html" class="btn btn-primary">Замовити</a>
+                            </div>
+                        </div>
+                        <div class="card" style="width: 18rem;">
+                            <img src="images/Card%20(4).jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Практикус (100$)</h5>
+                                <p class="card-text">В комплект входять всі попередні пакети + навчання анімації в After Effects і AN</p>
+                                <a href="2386580621/index2.html" class="btn btn-primary ">Замовити</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item alert-danger" style="font-size: 2vw; width: 100%" href="2386580621/index2.html">Перед тим, як замовити курс, вам потрібно зареєструватися</a>
+                <div class="dropdown-divider"></div>
+            </div>
+            <!--Rozdilka-->
+
+            <!--Rozdilka-->
             <hr class="d-sm-none">
         </div>
+        <!--Rozdilka rozdilu-->
         <div class="col-sm-4">
-
-            <div class="container text-center" style="margin-top: 10px">
-                <button type="button" class="btn btn-outline-success" data-toggle="collapse" data-target="#demo1">Меню додаткових утиліт </button>
-                <div id="demo1" class="collapse">
-                    <a class="dropdown-item text-info mt-2" href="index.html">&#10112Головна</a>
-                    <a class="dropdown-item text-success" href="About%20us.html">&#10113Про нас</a>
-                    <a class="dropdown-item text-warning" href="FAQ.html">&#10114FAQ</a>
-                    <a class="dropdown-item text-danger" href="Forum.html">&#10115Форум</a>
-                    <a class="dropdown-item text-secondary" href="2048-master/index.html">&#10116Бонусні матеріали</a>
+            <div class="container text-center" style="margin-bottom: 10px">
+                <button type="button" class="btn btn-outline-info w-75" data-toggle="collapse" data-target="#demo2">
+                    Профіль
+                </button>
+                <div id="demo2" class="collapse">
+                    <form class="px-4 py-3">
+                        <div class="form-group">
+                            <input class="form-control item" type="email" name="email" id="email" placeholder="Email"
+                                   required>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control item" type="password" name="Пароль" minlength="6" id="password"
+                                   placeholder="Пароль" required>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="dropdownCheck">
+                            <label class="form-check-label" for="dropdownCheck">
+                                Запам'ятати мене
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Ввійти</button>
+                    </form>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="2386580621/index2.html">Реєстрація</a>
+                    <a class="dropdown-item" href="2386580621/index2.html">Забули пароль?</a>
+                    <div class="dropdown-divider"></div>
                 </div>
             </div>
-            <h2 class="text-center">Недавні публікації учасників:</h2>
-            <h5><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-dark nav-link">Eduard</a></h5>
-            <figure>
-                <img class="img1" src="images/service_img1.png">
-            </figure>
-            <h5><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-dark nav-link">Grudy2004</a></h5>
-            <figure>
-                <img class="img1" src="images/service_img2.png">
-            </figure>
-            <h5><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-dark nav-link">Steuwy21</a></h5>
-            <figure>
-                <img class="img1" src="images/service_img3.png">
-            </figure>
-            <h5><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-dark nav-link">PheezzeL</a></h5>
-            <figure>
-                <img class="img1" src="images/service_img4.png">
-            </figure>
-            <h5><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-dark nav-link">Milkyway</a></h5>
-            <figure>
-                <img class="img1" src="images/service_img11.png">
-            </figure>
-            <figure>
-                <h5><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="text-dark nav-link">Bilka</a></h5>
-                <img class="img1" src="images/service_img10.png">
-            </figure>
 
+            <h2 class="text-center">Недавні публікації учасників:</h2>
+            <div class="figurecontainer">
+                <figure>
+                    <img class="image" src="images/service_img1.png" alt="news1">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://youtu.be/dQw4w9WgXcQ?t=42" class="text-dark nav-link">Eduard</a>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <img class="image" src="images/service_img2.png" alt="news1">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://youtu.be/dQw4w9WgXcQ?t=42" class="text-dark nav-link">Grudy2004</a>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <img class="image" src="images/service_img3.png" alt="news1">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://youtu.be/dQw4w9WgXcQ?t=42" class="text-dark nav-link">Steuwy21</a>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <img class="image" src="images/service_img4.png" alt="news1">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://youtu.be/dQw4w9WgXcQ?t=42" class="text-dark nav-link">PheezeeL</a>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <img class="image" src="images/service_img11.png" alt="news1">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://youtu.be/dQw4w9WgXcQ?t=42" class="text-dark nav-link">MilkyWay</a>
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                    <img class="image" src="images/service_img10.png" alt="news1">
+                    <div class="overlay">
+                        <div class="text">
+                            <a href="https://youtu.be/dQw4w9WgXcQ?t=42" class="text-dark nav-link">Bilka</a>
+                        </div>
+                    </div>
+                </figure>
+            </div>
         </div>
     </div>
-</div>
 
-<div class="jumbotron text-center col-sm-12" style="margin-bottom:0">
+</main>
+
+
+<footer class="jumbotron text-center col-sm-12" style="margin-top:25px">
     <div class="row">
         <div class="col-sm-3">
             <h3>Про нас</h3>
-            <p>Malinka — універсальна онлайн-школа для тих, хто хоче та любить малювати. Вона підійде початківцям, які бажають освоїти нову навичку з нуля, аматорам, яким потрібно заповнити прогалини у знаннях, і традиційним художникам, які хочуть спробувати працювати в цифрі і не тільки.</p>
+            <p>Malinka — універсальна онлайн-школа для тих, хто хоче та любить малювати. Вона підійде початківцям, які
+                бажають освоїти нову навичку з нуля, аматорам, яким потрібно заповнити прогалини у знаннях, і
+                традиційним художникам, які хочуть спробувати працювати в цифрі і не тільки.</p>
         </div>
         <div class="col-sm-3">
             <h3>Навігація</h3>
             <ul class="xple_menu">
-                <li><a href="index.html"class="text-dark">Головна</a></li>
-                <li><a href="About%20us.html"class="text-dark">Про нас</a></li>
-                <li><a href="FAQ.html"class="text-dark">FAQ</a></li>
-                <li><a href="Forum.html"class="text-dark">Форум</a></li>
-                <li><a href="2048-master/index.html"class="text-dark">Бонусні матеріали</a></li>
+                <li><a href="index.html" class="text-dark">Головна</a></li>
+                <li><a href="About%20us.html" class="text-dark">Про нас</a></li>
+                <li><a href="FAQ.html" class="text-dark">FAQ</a></li>
+                <li><a href="Forum.html" class="text-dark">Форум</a></li>
+                <li><a href="2048-master/index.html" class="text-dark">Бонусні матеріали</a></li>
             </ul>
         </div>
         <div class="col-sm-3">
@@ -239,18 +278,43 @@
         <div class="col-sm-3">
             <h3>Джерела</h3>
             <ul class="xple_menu">
-                <li><a href="https://www.w3schools.com/"class="text-dark">w3school</a></li>
-                <li><a href="https://getbootstrap.com/"class="text-dark">getbootstrap</a></li>
-                <li><a href="https://twitter.com"class="text-dark">images</a></li>
+                <li><a href="https://www.w3schools.com/" class="text-dark">w3school</a></li>
+                <li><a href="https://getbootstrap.com/" class="text-dark">getbootstrap</a></li>
+                <li><a href="https://twitter.com" class="text-dark">images</a></li>
 
             </ul>
         </div>
     </div>
-</div>
+</footer>
+
+<script src="JS/popover.js"></script>
+<script src="JS/Btn-up.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="JS/Reklama.js"></script>
 <script>
     $(document).ready(function(){
-        $('[data-toggle="popover"]').popover();
+        $(window).on('beforeunload', function () {
+            return "Бажаєте покинути сторінку?";
+        });
+        setTimeout(function(){
+            $('.block-popup, .overlay2').fadeIn();
+        },5000)
+        $('.open-modal').mouseover(function(){
+            $('.block-popup, .overlay2').fadeIn();
+        })
+        $('.open-modal2').click(function(){
+            $('.block-popup, .overlay2').fadeIn();
+        })
+        $('.block-popup span').click(function(){
+            $('.block-popup, .overlay2').fadeOut();
+        })
+        $(window).mouseleave(function(e){
+            if (e.clientY < 0) {
+                $('.block-popup, .overlay2').fadeIn();
+            }
+        })
     });
 </script>
+
 </body>
 </html>
