@@ -124,6 +124,22 @@ img:hover{
     gap: 1vw;
 
 }
+.container-Grid2{
+    width: 100%;
+
+}
+
+.container-Grid2 .gridRol2 .img1:hover{
+    filter: sepia(50%);
+
+}
+.container-Grid2 .gridRol2{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1vw;
+    text-align: center;
+
+}
 .btn-up {
     position: fixed;
     background-color: #bbada0;
@@ -201,3 +217,4 @@ img:hover{
     display: none;
     z-index: 9998;
 }
+
