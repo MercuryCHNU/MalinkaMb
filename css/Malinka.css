@@ -22,7 +22,7 @@ body{
     background: linear-gradient(210deg,deepskyblue,beige, blanchedalmond, lightblue);
     margin: 20px auto;
     font-family: 'Amatic SC', cursive, 'Pacifico', cursive;
-    font-size: 24px;
+    font-size: 28px;
 }
 video{
     width: 100%;
@@ -136,8 +136,10 @@ img:hover{
 .container-Grid2 .gridRol2{
     display: flex;
     flex-wrap: wrap;
-    gap: 1vw;
-    text-align: center;
+    gap: 2vw;
+    justify-content: center;
+
+
 
 }
 .btn-up {
@@ -187,7 +189,7 @@ img:hover{
     position: fixed;
     background: #fff;
     max-width: 100%;
-    width: 300px;
+    width: 350px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
