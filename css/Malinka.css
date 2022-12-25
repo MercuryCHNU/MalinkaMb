@@ -11,7 +11,7 @@
 }
 .carousel-inner img {
     width: 100%;
-    height: auto;
+    height: 35vw;
 }
 .h1c{
     color: darkorange;
@@ -19,19 +19,19 @@
 }
 body{
     max-width: 85%;
-    background: linear-gradient(210deg,deepskyblue,beige, blanchedalmond, lightblue);
+    background: linear-gradient(210deg,rosybrown,beige, blanchedalmond, sandybrown);
     margin: 20px auto;
     font-family: 'Amatic SC', cursive, 'Pacifico', cursive;
     font-size: 28px;
 }
-video{
-    width: 100%;
+.start2 video{
+    width: 75%;
     border-radius: 10px;
     transition: all 3s;
 }
 video:hover{
     opacity: 90%;
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 .img1{
     width: 100%;
@@ -219,4 +219,13 @@ img:hover{
     display: none;
     z-index: 9998;
 }
-
+@media only screen and (max-width: 600px) {
+    .start2 video {
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .start3 img {
+        width: 100%;
+    }
+}
