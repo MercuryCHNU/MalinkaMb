@@ -19,7 +19,7 @@
 }
 body{
     max-width: 85%;
-    background: linear-gradient(210deg,rosybrown,beige, blanchedalmond, sandybrown);
+    background: linear-gradient(210deg,deepskyblue,beige, blanchedalmond, lightblue);
     margin: 20px auto;
     font-family: 'Amatic SC', cursive, 'Pacifico', cursive;
     font-size: 28px;
@@ -189,12 +189,12 @@ img:hover{
     position: fixed;
     background: #fff;
     max-width: 100%;
-    width: 350px;
+    width: 360px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 5px;
-    border: 2px solid #ccc;
+    border-radius: 3px;
+    border: 1px solid #ccc;
     padding: 10px;
     box-shadow: 0 12px 20px -10px;
     text-align: center;
@@ -228,4 +228,21 @@ img:hover{
     .start3 img {
         width: 100%;
     }
+}
+#snowflakeContainer {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+
+.snowflake {
+    position: fixed;
+    background-color: snow;
+    user-select: none;
+    z-index: 9999;
+    pointer-events: none;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
 }
