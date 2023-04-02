@@ -17,17 +17,13 @@
 </head>
 <body>
 
-<div class="block-popup">
-    <h3>Встигніть замовити курс, поки діє знижка 30%</h3>
-    <form>
-        <input type="email" placeholder="email" name="email-popup">
-        <input type="button" name="btn-form-popup" value="Відправити">
-    </form>
-    <span>&times;</span>
-</div>
+
 <div class="overlay2"></div>
 
 <div class="btn-up btn-up_hide"></div>
+<div id="snowflakeContainer">
+    <span class="snowflake"></span>
+</div>
 
 <header>
     <div id="demo" class="carousel slide" data-ride="carousel">
@@ -38,22 +34,22 @@
         </ul>
         <div class="carousel-inner rounded-top">
             <div class="carousel-item active">
-                <img src="images/sst%20(1).gif" alt="pz1">
+                <img src="images/20.png" alt="pz1">
                 <div class="carousel-caption text-muted">
-                    <h3>Вітаємо вас у нашій онлайн-школі навчання <span class="h1c">Malinka</span></h3>
+                    <h3>Вітаємо вас у нашій онлайн-школі навчання <span class="h1c">Millary</span></h3>
                     <p class="gradient">Для новачків та профі.
                         Ілюстрація. Скетчінг. Живопис. Procreate. Каліграфія. Resin Art</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/sst2.png" alt="pz2">
+                <img src="images/21.png" alt="pz2">
                 <div class="carousel-caption text-muted">
                     <h3>Термін навчання триває від <span class="h1c">30 до 180 днів</span></h3>
                     <p>В нашій онлайн-школі існує подат 10 різноманітних курсів, від пейзажу до малювання аніме</p>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="images/sst3.png" alt="pz3">
+                <img src="images/22.png" alt="pz3">
                 <div class="carousel-caption text-muted">
                     <h3>Можемо викладати <span class="h1c"> як онлайн, так і офлайн</span></h3>
                     <p> Навчання проходить по плану, в якому знаходяться десятки тем, залежачи від обраного курсу</p>
@@ -72,8 +68,8 @@
     <nav class="navbar navbar-expand-sm navbar-light sticky-top rounded-bottom"
          style="background: linear-gradient(270deg,cornflowerblue, powderblue)">
         <a class="navbar-brand" href="index.html">
-            <img src="images/logo_footer.png" alt="Malinka">
-            <img src="images/pngwing.com%20(4).png" alt="Malinka" height="50px">
+            <img src="images/logo_footer2.png" alt="Malinka">
+
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -114,11 +110,7 @@
                     бажають освоїти нову навичку з нуля, аматорам, яким потрібно заповнити прогалини у знаннях, і
                     традиційним художникам, які хочуть спробувати працювати в цифрі і не тільки. </p>
                 <figure class="start2 text-center"> <!--text-align:center-->
-                    <video controls autoplay muted loop>
-                        <source src="images/ssst.mp4" type="video/mp4">
-                        <source src="images/ssst.mp4" type="video/ogg">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img class="img1" src="images/pngwing.com (4).png" alt="sfd" width="75%">
                 </figure>
             </section>
             <!--Rozdilka-->
@@ -305,9 +297,7 @@
     <div class="row">
         <div class="col-sm-3">
             <h3>Про нас</h3>
-            <p>Malinka — універсальна онлайн-школа для тих, хто хоче та любить малювати. Вона підійде початківцям, які
-                бажають освоїти нову навичку з нуля, аматорам, яким потрібно заповнити прогалини у знаннях, і
-                традиційним художникам, які хочуть спробувати працювати в цифрі і не тільки.</p>
+            <p>Millary — універсальна онлайн-школа для тих, хто хоче та любить малювати.</p>
         </div>
         <div class="col-sm-3">
             <h3>Навігація</h3>
@@ -343,30 +333,177 @@
 <script src="JS/popover.js"></script>
 <script src="JS/Btn-up.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="JS/Reklama.js"></script>
+
 <script>
-    $(document).ready(function(){
-        $(window).on('beforeunload', function () {
-            return "Бажаєте покинути сторінку?";
-        });
-        setTimeout(function(){
-            $('.block-popup, .overlay2').fadeIn();
-        },5000)
-        $('.open-modal').mouseover(function(){
-            $('.block-popup, .overlay2').fadeIn();
-        })
-        $('.open-modal2').click(function(){
-            $('.block-popup, .overlay2').fadeIn();
-        })
-        $('.block-popup span').click(function(){
-            $('.block-popup, .overlay2').fadeOut();
-        })
-        $(window).mouseleave(function(e){
-            if (e.clientY < 0) {
-                $('.block-popup, .overlay2').fadeIn();
+    // Массив для хранения объектов Snowflake
+    var snowflakes = [];
+
+    // Глобальные переменные для размера окна браузера
+    var browserWidth;
+    var browserHeight;
+
+    // Указываем количество снежинок, которые должны быть видимыми
+    var numberOfSnowflakes = 50;
+
+    // Флаг для сброса положения снежинок
+    var resetPosition = false;
+
+    // Устанавливаем параметр enableAnimations
+    var enableAnimations = false;
+    var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
+
+    // Изменяем значение enableAnimations
+    function setAccessibilityState() {
+        if (reduceMotionQuery.matches) {
+            enableAnimations = false;
+        } else {
+            enableAnimations = true;
+        }
+    }
+    setAccessibilityState();
+
+    reduceMotionQuery.addListener(setAccessibilityState);
+
+    //
+    // Все начинается здесь...
+    //
+    function setup() {
+        if (enableAnimations) {
+            window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
+            window.addEventListener("resize", setResetFlag, false);
+        }
+    }
+    setup();
+
+    //
+    // Конструктор объекта Snowflake
+    //
+    function Snowflake(element, speed, xPos, yPos) {
+        // устанавливаем начальные свойства снежинки
+        this.element = element;
+        this.speed = speed;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.scale = 1;
+
+        // объявляем переменные, используемые для движения снежинки
+        this.counter = 0;
+        this.sign = Math.random() < 0.5 ? 1 : -1;
+
+        // устанавливаем значения начальной непрозрачности и размера снежинки
+        this.element.style.opacity = (.1 + Math.random()) / 3;
+    }
+
+    //
+    // Функция, ответственная за перемещение снежинки
+    //
+    Snowflake.prototype.update = function () {
+        // используем тригонометрию, чтобы определить позицию x и y
+        this.counter += this.speed / 5000;
+        this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
+        this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
+        this.scale = .5 + Math.abs(10 * Math.cos(this.counter) / 20);
+
+        // устанавливаем позицию снежинки
+        setTransform(Math.round(this.xPos), Math.round(this.yPos), this.scale, this.element);
+
+        // если снежинка опустится ниже окна браузера, переместим ее обратно наверх
+        if (this.yPos > browserHeight) {
+            this.yPos = -50;
+        }
+    }
+
+    //
+    // Эффективный способ установить положение и размер снежинки
+    //
+    function setTransform(xPos, yPos, scale, el) {
+        el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
+    }
+
+    //
+    // Функция, ответственная за создание снежинки
+    //
+    function generateSnowflakes() {
+
+        // получаем элемент снежинки из DOM и сохраняем его
+        var originalSnowflake = document.querySelector(".snowflake");
+
+        // получаем доступ к контейнеру родителя элемента снежинки
+        var snowflakeContainer = originalSnowflake.parentNode;
+        snowflakeContainer.style.display = "block";
+
+        // получаем размер окна браузера
+        browserWidth = document.documentElement.clientWidth;
+        browserHeight = document.documentElement.clientHeight;
+
+        // создаем снежинку
+        for (var i = 0; i < numberOfSnowflakes; i++) {
+
+            // клонируем индивидуальную снежинку и добавляем ее в snowflakeContainer
+            var snowflakeClone = originalSnowflake.cloneNode(true);
+            snowflakeContainer.appendChild(snowflakeClone);
+
+            // устанавливаем начальную позицию и свойства для оригинальной снежинки
+            var initialXPos = getPosition(50, browserWidth);
+            var initialYPos = getPosition(50, browserHeight);
+            var speed = 5 + Math.random() * 40;
+
+            // создаем объект Snowflake
+            var snowflakeObject = new Snowflake(snowflakeClone,
+                speed,
+                initialXPos,
+                initialYPos);
+            snowflakes.push(snowflakeObject);
+        }
+
+        // убираем снежинку, так как больше не нужно, чтобы она была видимой
+        snowflakeContainer.removeChild(originalSnowflake);
+
+        moveSnowflakes();
+    }
+
+    //
+    // Отвечает за перемещение каждой снежинки, вызывая функцию обновления
+    //
+    function moveSnowflakes() {
+
+        if (enableAnimations) {
+            for (var i = 0; i < snowflakes.length; i++) {
+                var snowflake = snowflakes[i];
+                snowflake.update();
             }
-        })
-    });
+        }
+
+        // Сбрасывает значения позиций всех снежинок до установки нового значения
+        if (resetPosition) {
+            browserWidth = document.documentElement.clientWidth;
+            browserHeight = document.documentElement.clientHeight;
+
+            for (var i = 0; i < snowflakes.length; i++) {
+                var snowflake = snowflakes[i];
+
+                snowflake.xPos = getPosition(50, browserWidth);
+                snowflake.yPos = getPosition(50, browserHeight);
+            }
+
+            resetPosition = false;
+        }
+
+        requestAnimationFrame(moveSnowflakes);
+    }
+
+    //
+
+    function getPosition(offset, size) {
+        return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
+    }
+
+    //
+    // Сброс позиций всех снежинок
+    //
+    function setResetFlag(e) {
+        resetPosition = true;
+    }
 </script>
 
 </body>
